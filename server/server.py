@@ -1,5 +1,5 @@
 import json
-from flask import Flask, redirect  
+from flask import Flask, redirect, send_from_directory  
 from flask_cors import CORS
 import requests
 from dummy_data import dummy_data
@@ -9,14 +9,18 @@ from datetime import datetime, timedelta
 lastData = None
 lastUpdate = datetime.min
 
-app = Flask(__name__)     
+app = Flask(__name__, static_folder='static')     
 CORS(app)
 
 
 
 @app.route("/") 
 def home():
-    return redirect('api')
+    return redirect('web')
+
+@app.route("/web")
+def web():
+    return send_from_directory('static', 'index.html')
 
 @app.route("/api")           
 def api():       
@@ -45,5 +49,6 @@ def api():
     lastUpdate = datetime.now()
 
     return output # "<h1>hello world</h1>"   
+
 
 app.run()
