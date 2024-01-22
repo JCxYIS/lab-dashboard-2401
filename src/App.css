@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  font-family: 'Noto Sans TC', sans-serif;
 }
 
 .App-logo {
@@ -16,11 +17,12 @@
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
+  max-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(18px + 2vmin);
   color: white;
 }
 
@@ -35,4 +37,29 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+#temp {
+  font-size: 15em;
+  font-weight: bold;
+  /* color: #282c34; */
+}
+
+#top {
+  position: absolute;
+  top: 10%;
+  font-size: 1.75em;
+}
+
+#bottom {
+  position: absolute;
+  bottom: 5%;
+}
+
+#lbicon {
+  position: absolute;
+  bottom: -10%;
+  left: -5%;
+  font-size: 8em;
+  animation: App-logo-spin infinite 15s linear;
 }
