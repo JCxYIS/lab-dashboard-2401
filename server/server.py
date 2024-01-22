@@ -35,7 +35,7 @@ def api():
 
     # print(req.text)
     times = re.findall(r'<th scope="row" headers="time" class="is_show">([0-9][0-9]\/[0-9][0-9])<br class="visible-md"> ([0-9]+\:[0-9]+)<\/th>', rawData)
-    temps = re.findall(r'<span class="tem-C is-active">([0-9]*[.][0-9])<\/span>', rawData)
+    temps = re.findall(r'<span class="tem-C is-active">([0-9]*[.][0-9])<\/span>', rawData)  # TODO 我不相信會到零下...大概吧
     
     output = []
     for i in range(len(times)):
